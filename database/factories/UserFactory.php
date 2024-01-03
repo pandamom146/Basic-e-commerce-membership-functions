@@ -1,3 +1,4 @@
+// 生成常規和未驗證使用者的功能，以便在開發和測試中使用
 <?php
 
 namespace Database\Factories;
