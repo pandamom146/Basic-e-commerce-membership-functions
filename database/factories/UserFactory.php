@@ -39,6 +39,7 @@ class UserFactory extends Factory
      */
     public function unverified()
     {
+        // 返回一個修改過的數據集，這裡修改了 email_verified_at 字段的值為 null
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
