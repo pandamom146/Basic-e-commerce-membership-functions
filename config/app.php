@@ -121,6 +121,7 @@ return [
 
     'key' => env('APP_KEY'),
 
+    // 指定使用的加密算法為 'AES-256-CBC'
     'cipher' => 'AES-256-CBC',
 
     /*
