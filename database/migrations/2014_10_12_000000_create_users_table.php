@@ -1,3 +1,4 @@
+// Laravel 框架中的資料庫遷移（Migration）。遷移是用於定義數據庫結構變更的工具，它可以使開發者更容易地管理和維護數據庫結構。
 <?php
 
 use Illuminate\Database\Migrations\Migration;
