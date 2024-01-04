@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        // 使用 Schema 的 dropIfExists 方法來刪除 users 表
         Schema::dropIfExists('users');
     }
 }
