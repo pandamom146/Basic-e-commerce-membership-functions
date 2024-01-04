@@ -191,6 +191,7 @@ return [
     |
     */
 
+    // 定義了應用程式使用的類別別名。這些別名提供了快速訪問常用類別的便捷方式，例如 Auth、DB、Log 等
     'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,
