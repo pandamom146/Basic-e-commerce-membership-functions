@@ -2,6 +2,8 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+
+// 定義數據庫表結構
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
