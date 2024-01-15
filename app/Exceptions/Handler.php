@@ -13,6 +13,8 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
+
+    // $dontReport: 一個陣列，列出不應該被報告的例外類型。
     protected $dontReport = [
         //
     ];
@@ -22,6 +24,8 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
+
+    // $dontFlash: 一個陣列，列出在驗證例外時永遠不應該被「閃回」（flash）的輸入（input）名稱
     protected $dontFlash = [
         'current_password',
         'password',
@@ -35,6 +39,8 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
+
+        // 註冊一個回調函數，當例外被報告時，此回調函數會被呼叫
         $this->reportable(function (Throwable $e) {
             //
         });
