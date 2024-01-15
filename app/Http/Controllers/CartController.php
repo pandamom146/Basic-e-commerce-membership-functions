@@ -28,17 +28,26 @@ class CartController extends Controller
         // $cart['items'] = collect($cartItems);
         $user = auth()->user();
         $cart = Cart::with(['cartItems'])->where('user_id', $user->id)
-                                         ->where('checkouted', false) // 只抓取未結帳
+                                        // 只抓取未結帳
+                                         ->where('checkouted', false) 
+                                         // 如果找不到符合條件的購物車，則創建一個新的購物車。
                                          ->firstOrCreate(['user_id'=> $user->id]);
-
+// 將購物車的內容以 JSON 格式回傳
         return response($cart);
     }
 
     public function checkout()
     {
+        // 取得當前授權使用者的資訊
         $user = auth()->user();
+        
+        // 取得該使用者未結帳的購物車及其關聯的 cartItems。
         $cart = $user->carts()->where('checkouted', false)->with('cartItems')->first();
+        
+        // 檢查是否存在未結帳的購物車
         if($cart){
+            
+            // 呼叫 checkout 方法，執行結帳操作
             $result = $cart->checkout();
             return response($result);
         }
